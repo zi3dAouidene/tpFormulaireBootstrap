@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+
+  edudiants=[];
+  constructor(private dataService:DataService) { 
+      this.edudiants = this.dataService.etudiants;
+
+  }
 
   ngOnInit(): void {
   }
-
+  delete(e){
+    this.dataService.etudiants.splice(e);
+    this.edudiants.splice(e);
+  }
 }

@@ -1,1 +1,21 @@
-<p>list works!</p>
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Date de naissance</th>
+        <th scope="col">Emial</th>
+        <th scope="col">Nom</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let e of etudiants"> </tr>
+    <td>{{e.nom}}</td>
+    <td>{{e.prenom}}</td>
+    <td>{{e.dateNaissance}}</td>
+    <td>{{e.email}}</td>
+    <td>
+        <button type="submit" (click)="delete(e)" ><i class="fa fa-close"></i></button>
+    </td>
+</tbody>
+</table>
