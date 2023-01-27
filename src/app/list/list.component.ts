@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { IEtudiant } from '../home/home.component';
 
 @Component({
   selector: 'app-list',
@@ -9,16 +10,18 @@ import { DataService } from '../data.service';
 export class ListComponent implements OnInit {
 
 
-  edudiants=[];
+  etudiants:IEtudiant[]=[];
   constructor(private dataService:DataService) { 
-      this.edudiants = this.dataService.etudiants;
+      this.etudiants = this.dataService.etudiants;
 
   }
 
   ngOnInit(): void {
   }
-  delete(e){
+
+
+  delete(e:any){
     this.dataService.etudiants.splice(e);
-    this.edudiants.splice(e);
+    this.etudiants.splice(e);
   }
 }

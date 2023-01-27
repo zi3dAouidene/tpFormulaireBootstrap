@@ -9,18 +9,36 @@ import { DataService } from './../data.service';
 })
 export class HomeComponent implements OnInit {
 
-  etudiant={}
-  list=[]
+  etudiant:IEtudiant={
+    nom:"",
+    prenom:"",
+    email:"",
+    dateNaissance:"",
+  }
+  list:IEtudiant[]=[]
 
   constructor(private dataService:DataService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
-  save(etudiant){
+  save(etudiant:IEtudiant){
     this.list.push(etudiant);
     this.dataService.etudiants.push(etudiant);
-    this.etudiant={};
+    this.etudiant={
+      nom:"",
+      prenom:"",
+      email:"",
+      dateNaissance:"",
+    };
     this.router.navigate(['list']);
   }
+}
+
+
+export interface IEtudiant {
+  nom:string;
+  prenom:string;
+  email:string;
+  dateNaissance:string;
 }
