@@ -1,0 +1,27 @@
+<form>
+
+
+    <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" class="form-control" name="nom" placeholder="Enter voter nom" [(ngModel)]="etudiant.nom">
+    </div>
+
+    <div class="form-group">
+        <label for="nom">Prénom</label>
+        <input type="text" class="form-control" name="prenom" placeholder="Enter voter prenom" [(ngModel)]="etudiant.prenom">
+    </div>
+    
+    <div class="form-group">
+        <label for="nom">Date de naissance</label>
+        <input type="text" class="form-control" name="dateNiassance" placeholder="Enter voter date de naissance" [(ngModel)]="etudiant.dateNiassance">
+    </div>
+    
+    <div class="form-group">
+        <label for="nom">Email</label>
+        <input type="text" class="form-control" name="email" aria-describedby="email" placeholder="Enter voter email" [(ngModel)]="etudiant.email">
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary" (click)="save(etudiant)"> Ajouter</button>
+    </div>
+</form>
